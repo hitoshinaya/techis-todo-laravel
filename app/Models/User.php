@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+       * ユーザーの保持する全タスク
+       */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
